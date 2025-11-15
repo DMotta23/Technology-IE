@@ -49,7 +49,7 @@ const App: React.FC = () => {
         const { data: farmsData, error: farmsError } = await supabase.from('farms').select('*');
         if (farmsError) console.error('Error fetching farms:', farmsError.message);
         else {
-            const transformedFarms = farmsData.map((f: any) => ({
+            let transformedFarms: Farm[] = farmsData.map((f: any) => ({
                 id: f.id,
                 name: f.name,
                 location: f.location,
@@ -58,6 +58,36 @@ const App: React.FC = () => {
                 imageUrl: f.image_url,
                 coverImageUrl: f.cover_image_url,
             }));
+
+            // Override with new farm data and images
+            if (transformedFarms.length > 0) {
+                transformedFarms[0] = {
+                    ...transformedFarms[0],
+                    name: "Golden Valley Acres",
+                    location: "California, USA",
+                    imageUrl: "https://images.unsplash.com/photo-1500674425229-f692875b0ab7?q=80&w=800&auto=format&fit=crop",
+                    coverImageUrl: "https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?q=80&w=1600&auto=format&fit=crop",
+                };
+            }
+            if (transformedFarms.length > 1) {
+                transformedFarms[1] = {
+                    ...transformedFarms[1],
+                    name: "Toscana Fields",
+                    location: "Tuscany, Italy",
+                    imageUrl: "https://images.unsplash.com/photo-1598165426123-f5a8229b3692?q=80&w=800&auto=format&fit=crop",
+                    coverImageUrl: "https://images.unsplash.com/photo-1506813561347-cbb27c199f2c?q=80&w=1600&auto=format&fit=crop",
+                };
+            }
+            if (transformedFarms.length > 2) {
+                transformedFarms[2] = {
+                    ...transformedFarms[2],
+                    name: "Serra do Mar Coffee",
+                    location: "Minas Gerais, Brazil",
+                    imageUrl: "https://images.unsplash.com/photo-1620138459202-a14d50aab414?q=80&w=800&auto=format&fit=crop",
+                    coverImageUrl: "https://images.unsplash.com/photo-1500356536257-2a6b1691656b?q=80&w=1600&auto=format&fit=crop",
+                };
+            }
+            
             setFarms(transformedFarms);
         }
 

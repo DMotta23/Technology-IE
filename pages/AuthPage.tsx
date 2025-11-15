@@ -42,7 +42,7 @@ const AuthPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover" style={{backgroundImage: "url('https://picsum.photos/seed/auth/1600/1200')"}}>
+    <div className="min-h-screen flex items-center justify-center bg-cover" style={{backgroundImage: "url('https://images.unsplash.com/photo-1492944548465-d41ce1f65514?q=80&w=2070&auto=format&fit=crop')"}}>
         <div className="absolute inset-0 bg-earth-green/70"></div>
         <div className="relative max-w-md w-full mx-auto p-8 bg-cream/90 backdrop-blur-sm rounded-2xl shadow-2xl">
             <div className="text-center mb-8">
