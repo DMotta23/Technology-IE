@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, useEffect } from 'react';
 import type { View, Product, Farm, CartItem, ToastMessage } from './types';
 import { supabase } from './lib/supabase';
@@ -65,8 +66,8 @@ const App: React.FC = () => {
                     ...transformedFarms[0],
                     name: "Golden Valley Acres",
                     location: "California, USA",
-                    imageUrl: "https://images.unsplash.com/photo-1500674425229-f692875b0ab7?q=80&w=800&auto=format&fit=crop",
-                    coverImageUrl: "https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?q=80&w=1600&auto=format&fit=crop",
+                    imageUrl: "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=800&auto=format&fit=crop",
+                    coverImageUrl: "https://images.unsplash.com/photo-1425913502235-e41249b65846?q=80&w=1600&auto=format&fit=crop",
                 };
             }
             if (transformedFarms.length > 1) {
@@ -74,8 +75,8 @@ const App: React.FC = () => {
                     ...transformedFarms[1],
                     name: "Toscana Fields",
                     location: "Tuscany, Italy",
-                    imageUrl: "https://images.unsplash.com/photo-1598165426123-f5a8229b3692?q=80&w=800&auto=format&fit=crop",
-                    coverImageUrl: "https://images.unsplash.com/photo-1506813561347-cbb27c199f2c?q=80&w=1600&auto=format&fit=crop",
+                    imageUrl: "https://images.unsplash.com/photo-1536858974309-96399a19d849?q=80&w=800&auto=format&fit=crop",
+                    coverImageUrl: "https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?q=80&w=1600&auto=format&fit=crop",
                 };
             }
             if (transformedFarms.length > 2) {
@@ -83,8 +84,8 @@ const App: React.FC = () => {
                     ...transformedFarms[2],
                     name: "Serra do Mar Coffee",
                     location: "Minas Gerais, Brazil",
-                    imageUrl: "https://images.unsplash.com/photo-1620138459202-a14d50aab414?q=80&w=800&auto=format&fit=crop",
-                    coverImageUrl: "https://images.unsplash.com/photo-1500356536257-2a6b1691656b?q=80&w=1600&auto=format&fit=crop",
+                    imageUrl: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop",
+                    coverImageUrl: "https://images.unsplash.com/photo-1511920183353-3c9c9b062c1d?q=80&w=1600&auto=format&fit=crop",
                 };
             }
             
@@ -94,7 +95,7 @@ const App: React.FC = () => {
         const { data: productsData, error: productsError } = await supabase.from('products').select('*');
         if (productsError) console.error('Error fetching products:', productsError.message);
         else {
-            const transformedProducts = productsData.map((p: any) => ({
+            let transformedProducts = productsData.map((p: any) => ({
                 id: p.id,
                 name: p.name,
                 description: p.description,
@@ -105,6 +106,26 @@ const App: React.FC = () => {
                 imageUrl: p.image_url,
                 stock: p.stock
             }));
+            
+            // Override product images to ensure they are relevant and high-quality
+            const productImageOverrides: { [key: string]: string } = {
+                'Heirloom Tomatoes': 'https://images.unsplash.com/photo-1615485925575-b0354a73752d?q=80&w=800&auto=format&fit=crop',
+                'Rainbow Carrots': 'https://images.unsplash.com/photo-1585375108879-e2ab463df32a?q=80&w=800&auto=format&fit=crop',
+                'Organic Strawberries': 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=800&auto=format&fit=crop',
+                'Artisanal Cheddar Cheese': 'https://images.unsplash.com/photo-1618164436241-44752046d609?q=80&w=800&auto=format&fit=crop',
+                'Artisanal Sourdough': 'https://images.unsplash.com/photo-1589988832945-8145a57a0528?q=80&w=800&auto=format&fit=crop',
+                'Pasture-Raised Eggs': 'https://images.unsplash.com/photo-1598965675045-a1df16f27d49?q=80&w=800&auto=format&fit=crop',
+                'Wildflower Honey': 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?q=80&w=800&auto=format&fit=crop',
+                'Gala Apples': 'https://images.unsplash.com/photo-1579613832125-5d34a13ffe2a?q=80&w=800&auto=format&fit=crop'
+            };
+
+            transformedProducts = transformedProducts.map(product => {
+                if (productImageOverrides[product.name]) {
+                    return { ...product, imageUrl: productImageOverrides[product.name] };
+                }
+                return product;
+            });
+
             setProducts(transformedProducts);
         }
     };
