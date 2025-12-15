@@ -66,7 +66,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onManualLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover" style={{backgroundImage: "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop')"}}>
+    <div className="min-h-screen flex items-center justify-center bg-cover" style={{backgroundImage: "url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop')"}}>
         <div className="absolute inset-0 bg-earth-green/70"></div>
         <div className="relative max-w-md w-full mx-auto p-8 bg-cream/90 backdrop-blur-sm rounded-2xl shadow-2xl">
             <div className="text-center mb-8">

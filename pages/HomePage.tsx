@@ -34,7 +34,7 @@ const HomePage: React.FC<HomePageProps> = ({ setView, farms, products }) => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-cover bg-center text-white" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2070&auto=format&fit=crop')` }}>
+      <section className="relative h-[60vh] bg-cover bg-center text-white" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop')` }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-start">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Fresh from the farm.</h1>

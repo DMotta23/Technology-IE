@@ -8,8 +8,8 @@ export const MOCK_FARMS: Farm[] = [
     location: "California, USA",
     story: "Family-owned sustainable farm providing the freshest seasonal produce since 1985. We believe in regenerative agriculture and treating the land with respect.",
     certifications: ["Organic", "Non-GMO"],
-    imageUrl: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1632&auto=format&fit=crop",
-    coverImageUrl: "https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?q=80&w=2070&auto=format&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1595855709920-4e00f929831e?q=80&w=1000&auto=format&fit=crop", // Farmer holding produce or farm scene
+    coverImageUrl: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop" // Wide field
   },
   {
     id: 2,
@@ -17,8 +17,8 @@ export const MOCK_FARMS: Farm[] = [
     location: "Tuscany, Italy",
     story: "Bringing the authentic taste of Italy to your table. Our heritage grains and heirloom vegetables are grown using methods passed down through generations.",
     certifications: ["DOP", "Organic"],
-    imageUrl: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=1470&auto=format&fit=crop",
-    coverImageUrl: "https://images.unsplash.com/photo-1528750868778-95855079a613?q=80&w=1632&auto=format&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop", // Tuscany vibe
+    coverImageUrl: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=2070&auto=format&fit=crop" // Tuscany landscape
   },
   {
     id: 3,
@@ -26,8 +26,8 @@ export const MOCK_FARMS: Farm[] = [
     location: "Minas Gerais, Brazil",
     story: "High-altitude coffee beans grown with passion. We prioritize fair trade practices and support our local community of harvesters.",
     certifications: ["Fair Trade", "Rainforest Alliance"],
-    imageUrl: "https://images.unsplash.com/photo-1524350876685-274059332603?q=80&w=1470&auto=format&fit=crop",
-    coverImageUrl: "https://images.unsplash.com/photo-1511537629607-28373f280e6e?q=80&w=1922&auto=format&fit=crop"
+    imageUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1000&auto=format&fit=crop", // Coffee farm detail
+    coverImageUrl: "https://images.unsplash.com/photo-1524350876685-274059332603?q=80&w=2070&auto=format&fit=crop" // Coffee landscape
   }
 ];
 
@@ -41,7 +41,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "lb",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1591152345053-d144983084c8?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=1000&auto=format&fit=crop", // Distinct heirloom tomatoes
     stock: 50
   },
   {
@@ -52,7 +52,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "bunch",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1582576163090-09d3b6f8a969?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1447175008436-812378a83385?q=80&w=1000&auto=format&fit=crop", // Fresh carrots with greens
     stock: 30
   },
   {
@@ -63,7 +63,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "bag",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=1000&auto=format&fit=crop", // Clear spinach leaves
     stock: 40
   },
   {
@@ -74,7 +74,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1588619461332-445832b85955?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1563565375-f3fdf5ec2e90?q=80&w=1000&auto=format&fit=crop", // Red peppers
     stock: 60
   },
   {
@@ -85,7 +85,7 @@ export const MOCK_PRODUCTS: Product[] = [
      unit: "lb",
      farmId: 1,
      category: "Vegetable",
-     imageUrl: "https://images.unsplash.com/photo-1517604618753-29433d32d03b?q=80&w=1000&auto=format&fit=crop",
+     imageUrl: "https://images.unsplash.com/photo-1596097635121-14b63b7a0c19?q=80&w=1000&auto=format&fit=crop", // Sweet potatoes
      stock: 75
   },
   {
@@ -96,7 +96,7 @@ export const MOCK_PRODUCTS: Product[] = [
      unit: "each",
      farmId: 1,
      category: "Vegetable",
-     imageUrl: "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?q=80&w=1000&auto=format&fit=crop",
+     imageUrl: "https://images.unsplash.com/photo-1604977042946-1eecc6a376bc?q=80&w=1000&auto=format&fit=crop", // Sliced/Whole cucumbers
      stock: 45
   },
 
@@ -109,7 +109,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "lb",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1464965911861-746a04b4b0be?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1464965911861-746a04b4b0be?q=80&w=1000&auto=format&fit=crop", // Classic strawberries
     stock: 40
   },
   {
@@ -120,7 +120,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "lb",
     farmId: 3,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1000&auto=format&fit=crop", // Red apples
     stock: 100
   },
   {
@@ -131,7 +131,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "pint",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?q=80&w=1000&auto=format&fit=crop", // Blueberries
     stock: 55
   },
   {
@@ -142,7 +142,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "lb",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1527663273293-68f763f03407?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1595123550441-d377e017de6a?q=80&w=1000&auto=format&fit=crop", // Peaches
     stock: 35
   },
   {
@@ -153,7 +153,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1523049673856-6ca85567a9da?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1523049673856-6ca85567a9da?q=80&w=1000&auto=format&fit=crop", // Avocados
     stock: 65
   },
   {
@@ -164,7 +164,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1517429676674-8451847c2a71?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1595855709920-4e00f929831e?q=80&w=1000&auto=format&fit=crop", // Lemons
     stock: 80
   },
   {
@@ -175,7 +175,7 @@ export const MOCK_PRODUCTS: Product[] = [
       unit: "each",
       farmId: 3,
       category: "Fruit",
-      imageUrl: "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?q=80&w=1000&auto=format&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=1000&auto=format&fit=crop", // Sliced watermelon
       stock: 20
   },
 
@@ -188,7 +188,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "block",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=1000&auto=format&fit=crop", // Cheese block
     stock: 20
   },
   {
@@ -199,7 +199,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "dozen",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1506976785307-8732e854ad03?q=80&w=1000&auto=format&fit=crop", // Eggs
     stock: 60
   },
   {
@@ -210,7 +210,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "log",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1561576272-386b20677a29?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1452195100486-9c6049d6b555?q=80&w=1000&auto=format&fit=crop", // Soft cheese
     stock: 25
   },
   {
@@ -221,7 +221,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "gallon",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=1000&auto=format&fit=crop", // Milk bottle
     stock: 40
   },
   {
@@ -232,7 +232,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "jar",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop", // Yogurt with spoon
     stock: 35
   },
    {
@@ -243,7 +243,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "block",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?q=80&w=1000",
+    imageUrl: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?q=80&w=1000", // Butter
     stock: 30
   },
 
@@ -256,7 +256,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "loaf",
     farmId: 2,
     category: "Bakery",
-    imageUrl: "https://images.unsplash.com/photo-1585476992467-32ea55406c35?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1585476992467-32ea55406c35?q=80&w=1000&auto=format&fit=crop", // Sourdough loaf
     stock: 15
   },
   {
@@ -267,7 +267,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "loaf",
     farmId: 2,
     category: "Bakery",
-    imageUrl: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?q=80&w=1000&auto=format&fit=crop", // Baguettes
     stock: 40
   },
   {
@@ -278,7 +278,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 2,
     category: "Bakery",
-    imageUrl: "https://images.unsplash.com/photo-1555507036-ab1f40388085?q=80&w=1000",
+    imageUrl: "https://images.unsplash.com/photo-1555507036-ab1f40388085?q=80&w=1000", // Croissants
     stock: 50
   },
   {
@@ -289,7 +289,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 2,
     category: "Bakery",
-    imageUrl: "https://images.unsplash.com/photo-1499636138143-bd630f5cf388?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1499636138143-bd630f5cf388?q=80&w=1000&auto=format&fit=crop", // Cookies
     stock: 60
   },
 
@@ -302,7 +302,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "jar",
     farmId: 3,
     category: "Artisanal",
-    imageUrl: "https://images.unsplash.com/photo-1587049352851-8d4e89186eff?q=80&w=1000",
+    imageUrl: "https://images.unsplash.com/photo-1587049352851-8d4e89186eff?q=80&w=1000", // Honey jar
     stock: 25
   },
   {
@@ -313,7 +313,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "bottle",
     farmId: 2,
     category: "Artisanal",
-    imageUrl: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=1000&auto=format&fit=crop", // Olive oil
     stock: 40
   },
   {
@@ -324,7 +324,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "jar",
     farmId: 1,
     category: "Artisanal",
-    imageUrl: "https://images.unsplash.com/photo-1563205764-6e927063462d?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1563205764-6e927063462d?q=80&w=1000&auto=format&fit=crop", // Jam
     stock: 35
   },
   {
@@ -335,7 +335,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "bag",
     farmId: 3,
     category: "Artisanal",
-    imageUrl: "https://images.unsplash.com/photo-1517093710776-80db61b29a28?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1517093710776-80db61b29a28?q=80&w=1000&auto=format&fit=crop", // Granola
     stock: 30
   }
 ];
