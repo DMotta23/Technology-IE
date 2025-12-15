@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { LeafIcon, GoogleIcon } from '../components/Icons';
 
-const AuthPage: React.FC = () => {
+interface AuthPageProps {
+    onDemoLogin?: () => void;
+}
+
+const AuthPage: React.FC<AuthPageProps> = ({ onDemoLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
@@ -26,19 +30,25 @@ const AuthPage: React.FC = () => {
             password,
         });
         if (error) throw error;
-        setMessage('Check your email for the confirmation link!');
+        // Email verification removed as requested. 
+        // Assuming Supabase project has "Confirm email" disabled, 
+        // the user will be automatically signed in via onAuthStateChange in App.tsx.
       }
     } catch (err: any) {
-      setError(err.error_description || err.message);
+      setError(err.error_description || err.message || "Authentication failed.");
     } finally {
       setLoading(false);
     }
   };
 
   const signInWithGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: 'google',
-    });
+    try {
+        await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        });
+    } catch (err: any) {
+        setError("Google sign in failed. Please try demo mode.");
+    }
   };
 
   return (
@@ -109,13 +119,24 @@ const AuthPage: React.FC = () => {
                 </div>
             </div>
 
-             <button
-                onClick={signInWithGoogle}
-                className="w-full flex items-center justify-center gap-3 py-2.5 px-4 bg-white text-forest-green font-semibold border border-stone-300 rounded-lg hover:bg-stone-50 transition-colors"
-             >
-                <GoogleIcon className="w-6 h-6"/>
-                <span>Sign in with Google</span>
-            </button>
+            <div className="space-y-3">
+                <button
+                    onClick={signInWithGoogle}
+                    className="w-full flex items-center justify-center gap-3 py-2.5 px-4 bg-white text-forest-green font-semibold border border-stone-300 rounded-lg hover:bg-stone-50 transition-colors"
+                >
+                    <GoogleIcon className="w-6 h-6"/>
+                    <span>Sign in with Google</span>
+                </button>
+                
+                {onDemoLogin && (
+                    <button
+                        onClick={onDemoLogin}
+                        className="w-full flex items-center justify-center gap-3 py-2.5 px-4 bg-sun-yellow/50 text-forest-green font-bold border border-yellow-400 rounded-lg hover:bg-sun-yellow hover:border-yellow-500 transition-colors"
+                    >
+                        <span>Continue as Guest (Demo)</span>
+                    </button>
+                )}
+            </div>
         </div>
     </div>
   );

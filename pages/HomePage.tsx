@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import type { View, Farm, Product } from '../types';
 import { ChevronRightIcon } from '../components/Icons';
@@ -53,7 +52,7 @@ const HomePage: React.FC<HomePageProps> = ({ setView, farms, products }) => {
       <section className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold text-forest-green">Meet Our Farmers</h2>
-          <button onClick={() => { /* Navigate to all farms page in future */ }} className="flex items-center text-warm-brown font-semibold hover:underline">
+          <button onClick={() => setView({ name: 'farms' })} className="flex items-center text-warm-brown font-semibold hover:underline">
             View All <ChevronRightIcon className="w-5 h-5 ml-1" />
           </button>
         </div>

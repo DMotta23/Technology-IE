@@ -44,7 +44,7 @@ const FarmPage: React.FC<FarmPageProps> = ({ farm, products, setView }) => {
                 <div className="mt-8">
                     <h3 className="text-2xl font-bold text-forest-green mb-3">Certifications</h3>
                     <div className="flex flex-wrap gap-3">
-                        {farm.certifications.map(cert => (
+                        {farm.certifications?.map(cert => (
                             <span key={cert} className="bg-earth-green/10 text-earth-green font-semibold px-4 py-1 rounded-full">{cert}</span>
                         ))}
                     </div>

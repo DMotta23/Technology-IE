@@ -1,3 +1,4 @@
+
 export interface Farm {
   id: number;
   name: string;
@@ -28,6 +29,7 @@ export interface CartItem {
 export type View =
   | { name: 'home' }
   | { name: 'browse' }
+  | { name: 'farms' }
   | { name: 'farm'; payload: number }
   | { name: 'product'; payload: number }
   | { name: 'checkout' };
