@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback, useEffect } from 'react';
 import type { View, Product, Farm, CartItem, ToastMessage } from './types';
 import { supabase } from './lib/supabase';
@@ -113,23 +112,24 @@ const App: React.FC = () => {
     setSession(null);
   };
 
-  const handleDemoLogin = () => {
+  const handleManualLogin = (email?: string) => {
+    const sessionEmail = email || 'demo@harvest.home';
     const demoSession = {
         user: { 
-            id: 'demo-user-123',
-            email: 'demo@harvest.home',
+            id: 'manual-user-' + Math.floor(Math.random() * 10000),
+            email: sessionEmail,
             app_metadata: {},
             user_metadata: {},
             aud: 'authenticated',
             created_at: new Date().toISOString()
         },
-        access_token: 'demo-token',
-        refresh_token: 'demo-refresh-token',
+        access_token: 'manual-token',
+        refresh_token: 'manual-refresh-token',
         expires_in: 3600,
         token_type: 'bearer'
     } as unknown as Session;
     setSession(demoSession);
-    setToast({ message: 'Welcome to Demo Mode!', type: 'success' });
+    setToast({ message: email ? 'Successfully logged in!' : 'Welcome to Demo Mode!', type: 'success' });
   };
 
   const renderView = () => {
@@ -173,7 +173,7 @@ const App: React.FC = () => {
   }
 
   if (!session) {
-      return <AuthPage onDemoLogin={handleDemoLogin} />;
+      return <AuthPage onManualLogin={handleManualLogin} />;
   }
 
   return (

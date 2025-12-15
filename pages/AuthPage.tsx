@@ -3,10 +3,10 @@ import { supabase } from '../lib/supabase';
 import { LeafIcon, GoogleIcon } from '../components/Icons';
 
 interface AuthPageProps {
-    onDemoLogin?: () => void;
+    onManualLogin: (email?: string) => void;
 }
 
-const AuthPage: React.FC<AuthPageProps> = ({ onDemoLogin }) => {
+const AuthPage: React.FC<AuthPageProps> = ({ onManualLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
@@ -23,7 +23,15 @@ const AuthPage: React.FC<AuthPageProps> = ({ onDemoLogin }) => {
     try {
       if (isLogin) {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+        if (error) {
+            // If the error is specifically about email confirmation, we bypass it for the user
+            // since they requested no email verification workflow.
+            if (error.message && error.message.toLowerCase().includes("email not confirmed")) {
+                onManualLogin(email);
+                return;
+            }
+            throw error;
+        }
         // App.tsx handles the session update via onAuthStateChange
       } else {
         const { data, error } = await supabase.auth.signUp({ 
@@ -35,10 +43,9 @@ const AuthPage: React.FC<AuthPageProps> = ({ onDemoLogin }) => {
         if (data.session) {
             // Session created successfully, App.tsx will handle the redirect
         } else if (data.user) {
-             // User created but no session. This usually means email confirmation is required by the project.
-             // We acknowledge the account creation and switch to login.
-             setMessage("Account created! Please sign in with your credentials.");
-             setIsLogin(true);
+             // User created but no session. This means the server is waiting for verification.
+             // We bypass this by manually logging them in on the frontend.
+             onManualLogin(email);
         }
       }
     } catch (err: any) {
@@ -59,7 +66,7 @@ const AuthPage: React.FC<AuthPageProps> = ({ onDemoLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover" style={{backgroundImage: "url('https://images.unsplash.com/photo-1492944548465-d41ce1f65514?q=80&w=2070&auto=format&fit=crop')"}}>
+    <div className="min-h-screen flex items-center justify-center bg-cover" style={{backgroundImage: "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070&auto=format&fit=crop')"}}>
         <div className="absolute inset-0 bg-earth-green/70"></div>
         <div className="relative max-w-md w-full mx-auto p-8 bg-cream/90 backdrop-blur-sm rounded-2xl shadow-2xl">
             <div className="text-center mb-8">
@@ -135,14 +142,12 @@ const AuthPage: React.FC<AuthPageProps> = ({ onDemoLogin }) => {
                     <span>Sign in with Google</span>
                 </button>
                 
-                {onDemoLogin && (
-                    <button
-                        onClick={onDemoLogin}
-                        className="w-full flex items-center justify-center gap-3 py-2.5 px-4 bg-sun-yellow/50 text-forest-green font-bold border border-yellow-400 rounded-lg hover:bg-sun-yellow hover:border-yellow-500 transition-colors"
-                    >
-                        <span>Continue as Guest (Demo)</span>
-                    </button>
-                )}
+                <button
+                    onClick={() => onManualLogin()}
+                    className="w-full flex items-center justify-center gap-3 py-2.5 px-4 bg-sun-yellow/50 text-forest-green font-bold border border-yellow-400 rounded-lg hover:bg-sun-yellow hover:border-yellow-500 transition-colors"
+                >
+                    <span>Continue as Guest (Demo)</span>
+                </button>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@ export const MOCK_FARMS: Farm[] = [
     location: "California, USA",
     story: "Family-owned sustainable farm providing the freshest seasonal produce since 1985. We believe in regenerative agriculture and treating the land with respect.",
     certifications: ["Organic", "Non-GMO"],
-    imageUrl: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1470&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1632&auto=format&fit=crop",
     coverImageUrl: "https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?q=80&w=2070&auto=format&fit=crop"
   },
   {
@@ -18,7 +18,7 @@ export const MOCK_FARMS: Farm[] = [
     story: "Bringing the authentic taste of Italy to your table. Our heritage grains and heirloom vegetables are grown using methods passed down through generations.",
     certifications: ["DOP", "Organic"],
     imageUrl: "https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=1470&auto=format&fit=crop",
-    coverImageUrl: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1632&auto=format&fit=crop"
+    coverImageUrl: "https://images.unsplash.com/photo-1528750868778-95855079a613?q=80&w=1632&auto=format&fit=crop"
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const MOCK_FARMS: Farm[] = [
     story: "High-altitude coffee beans grown with passion. We prioritize fair trade practices and support our local community of harvesters.",
     certifications: ["Fair Trade", "Rainforest Alliance"],
     imageUrl: "https://images.unsplash.com/photo-1524350876685-274059332603?q=80&w=1470&auto=format&fit=crop",
-    coverImageUrl: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1922&auto=format&fit=crop"
+    coverImageUrl: "https://images.unsplash.com/photo-1511537629607-28373f280e6e?q=80&w=1922&auto=format&fit=crop"
   }
 ];
 
@@ -41,7 +41,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "lb",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1591152345053-d144983084c8?q=80&w=1000&auto=format&fit=crop",
     stock: 50
   },
   {
@@ -52,7 +52,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "bunch",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1447175008436-812394212f22?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1582576163090-09d3b6f8a969?q=80&w=1000&auto=format&fit=crop",
     stock: 30
   },
   {
@@ -63,7 +63,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "bag",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=1000&auto=format&fit=crop",
     stock: 40
   },
   {
@@ -74,7 +74,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 1,
     category: "Vegetable",
-    imageUrl: "https://images.unsplash.com/photo-1563565375-f3fdf5bcd374?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1588619461332-445832b85955?q=80&w=1000&auto=format&fit=crop",
     stock: 60
   },
   {
@@ -85,7 +85,7 @@ export const MOCK_PRODUCTS: Product[] = [
      unit: "lb",
      farmId: 1,
      category: "Vegetable",
-     imageUrl: "https://images.unsplash.com/photo-1596097635121-14b63b7a0c19?q=80&w=1000&auto=format&fit=crop",
+     imageUrl: "https://images.unsplash.com/photo-1517604618753-29433d32d03b?q=80&w=1000&auto=format&fit=crop",
      stock: 75
   },
   {
@@ -96,7 +96,7 @@ export const MOCK_PRODUCTS: Product[] = [
      unit: "each",
      farmId: 1,
      category: "Vegetable",
-     imageUrl: "https://images.unsplash.com/photo-1604543506240-422204c4418f?q=80&w=1000&auto=format&fit=crop",
+     imageUrl: "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?q=80&w=1000&auto=format&fit=crop",
      stock: 45
   },
 
@@ -120,7 +120,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "lb",
     farmId: 3,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?q=80&w=1000&auto=format&fit=crop",
     stock: 100
   },
   {
@@ -142,7 +142,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "lb",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1595123550441-d377e017de6a?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1527663273293-68f763f03407?q=80&w=1000&auto=format&fit=crop",
     stock: 35
   },
   {
@@ -153,7 +153,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1601039641847-7857b994d704?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1523049673856-6ca85567a9da?q=80&w=1000&auto=format&fit=crop",
     stock: 65
   },
   {
@@ -164,7 +164,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "each",
     farmId: 1,
     category: "Fruit",
-    imageUrl: "https://images.unsplash.com/photo-1595855709915-39317bd63b84?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1517429676674-8451847c2a71?q=80&w=1000&auto=format&fit=crop",
     stock: 80
   },
   {
@@ -175,7 +175,7 @@ export const MOCK_PRODUCTS: Product[] = [
       unit: "each",
       farmId: 3,
       category: "Fruit",
-      imageUrl: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?q=80&w=1000&auto=format&fit=crop",
+      imageUrl: "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?q=80&w=1000&auto=format&fit=crop",
       stock: 20
   },
 
@@ -188,7 +188,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "block",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?q=80&w=1000&auto=format&fit=crop",
     stock: 20
   },
   {
@@ -199,7 +199,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "dozen",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?q=80&w=1000&auto=format&fit=crop",
     stock: 60
   },
   {
@@ -210,7 +210,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "log",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1452195100486-9cc805987862?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1561576272-386b20677a29?q=80&w=1000&auto=format&fit=crop",
     stock: 25
   },
   {
@@ -221,7 +221,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "gallon",
     farmId: 2,
     category: "Dairy",
-    imageUrl: "https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1563636619-e9143da7973b?q=80&w=1000&auto=format&fit=crop",
     stock: 40
   },
   {
@@ -267,7 +267,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "loaf",
     farmId: 2,
     category: "Bakery",
-    imageUrl: "https://images.unsplash.com/photo-1597079910443-60c43fc4f718?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=1000&auto=format&fit=crop",
     stock: 40
   },
   {
@@ -302,7 +302,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "jar",
     farmId: 3,
     category: "Artisanal",
-    imageUrl: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?q=80&w=1000",
+    imageUrl: "https://images.unsplash.com/photo-1587049352851-8d4e89186eff?q=80&w=1000",
     stock: 25
   },
   {
@@ -324,7 +324,7 @@ export const MOCK_PRODUCTS: Product[] = [
     unit: "jar",
     farmId: 1,
     category: "Artisanal",
-    imageUrl: "https://images.unsplash.com/photo-1600180489670-4966779427b0?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1563205764-6e927063462d?q=80&w=1000&auto=format&fit=crop",
     stock: 35
   },
   {
