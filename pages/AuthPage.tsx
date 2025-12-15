@@ -24,15 +24,22 @@ const AuthPage: React.FC<AuthPageProps> = ({ onDemoLogin }) => {
       if (isLogin) {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
+        // App.tsx handles the session update via onAuthStateChange
       } else {
-        const { error } = await supabase.auth.signUp({ 
+        const { data, error } = await supabase.auth.signUp({ 
             email, 
             password,
         });
         if (error) throw error;
-        // Email verification removed as requested. 
-        // Assuming Supabase project has "Confirm email" disabled, 
-        // the user will be automatically signed in via onAuthStateChange in App.tsx.
+        
+        if (data.session) {
+            // Session created successfully, App.tsx will handle the redirect
+        } else if (data.user) {
+             // User created but no session. This usually means email confirmation is required by the project.
+             // We acknowledge the account creation and switch to login.
+             setMessage("Account created! Please sign in with your credentials.");
+             setIsLogin(true);
+        }
       }
     } catch (err: any) {
       setError(err.error_description || err.message || "Authentication failed.");
