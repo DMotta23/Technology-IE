@@ -32,13 +32,28 @@ export type View =
   | { name: 'farms' }
   | { name: 'farm'; payload: number }
   | { name: 'product'; payload: number }
-  | { name: 'checkout' };
+  | { name: 'checkout' }
+  | { name: 'recipe-assistant' };
 
 export interface Recipe {
     recipeName: string;
     description: string;
     ingredients: string[];
     instructions: string[];
+}
+
+export interface AssistantIngredient {
+  name: string;
+  amount: string;
+  matchedProductId?: number;
+  quantityToBuy?: number;
+}
+
+export interface AssistantRecipe {
+  name: string;
+  description: string;
+  instructions: string[];
+  ingredients: AssistantIngredient[];
 }
 
 export interface ToastMessage {

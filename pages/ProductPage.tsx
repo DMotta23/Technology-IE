@@ -75,7 +75,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ product, farm, addToCart, set
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div>
+        <div className="relative">
           <img src={product.imageUrl} alt={product.name} className="w-full h-auto object-cover rounded-2xl shadow-lg"/>
         </div>
         <div>

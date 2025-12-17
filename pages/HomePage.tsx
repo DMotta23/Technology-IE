@@ -1,7 +1,7 @@
 
 import React from 'react';
 import type { View, Farm, Product } from '../types';
-import { ChevronRightIcon } from '../components/Icons';
+import { ChevronRightIcon, SparklesIcon } from '../components/Icons';
 
 interface HomePageProps {
   setView: (view: View) => void;
@@ -34,17 +34,30 @@ const HomePage: React.FC<HomePageProps> = ({ setView, farms, products }) => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-cover bg-center text-white" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop')` }}>
+      <section className="relative h-[65vh] bg-cover bg-center text-white" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2070&auto=format&fit=crop')` }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-start">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Fresh from the farm.</h1>
-          <p className="mt-4 text-xl md:text-2xl max-w-2xl">Discover the best local, organic produce delivered right to your doorstep.</p>
-          <button 
-            onClick={() => setView({ name: 'browse' })}
-            className="mt-8 px-8 py-3 bg-sun-yellow text-forest-green font-bold text-lg rounded-lg shadow-lg hover:bg-yellow-300 transform hover:scale-105 transition-all duration-300"
-          >
-            Shop All Produce
-          </button>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-sun-yellow/20 backdrop-blur-md rounded-full text-sun-yellow text-sm font-bold mb-4 border border-sun-yellow/30">
+             <SparklesIcon className="w-4 h-4"/>
+             <span>FRESH & LOCAL</span>
+          </div>
+          <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight">Fresh from the farm.</h1>
+          <p className="mt-4 text-xl md:text-2xl max-w-2xl text-stone-200">Discover the best local, organic produce delivered right to your doorstep.</p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <button 
+                onClick={() => setView({ name: 'browse' })}
+                className="px-8 py-4 bg-sun-yellow text-forest-green font-bold text-lg rounded-xl shadow-lg hover:bg-yellow-300 transform hover:scale-105 transition-all duration-300"
+            >
+                Shop All Produce
+            </button>
+            <button 
+                onClick={() => setView({ name: 'recipe-assistant' })}
+                className="flex items-center gap-2 px-8 py-4 bg-white/90 backdrop-blur-sm text-forest-green font-bold text-lg rounded-xl shadow-lg hover:bg-white transform hover:scale-105 transition-all duration-300"
+            >
+                <SparklesIcon className="w-6 h-6 text-earth-green"/>
+                AI Recipe Assistant
+            </button>
+          </div>
         </div>
       </section>
 

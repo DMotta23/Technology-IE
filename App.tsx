@@ -1,3 +1,4 @@
+
 import React, { useState, useCallback, useEffect } from 'react';
 import type { View, Product, Farm, CartItem, ToastMessage } from './types';
 import { supabase } from './lib/supabase';
@@ -11,6 +12,7 @@ import FarmPage from './pages/FarmPage';
 import ProductPage from './pages/ProductPage';
 import CheckoutPage from './pages/CheckoutPage';
 import FarmsPage from './pages/FarmsPage';
+import RecipeAssistantPage from './pages/RecipeAssistantPage';
 import Cart from './components/Cart';
 import AuthPage from './pages/AuthPage';
 import Toast from './components/Toast';
@@ -20,9 +22,8 @@ const App: React.FC = () => {
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
   
-  // Use MOCK data as source of truth to ensure correct images and prevent DB crashes
-  const [farms, setFarms] = useState<Farm[]>(MOCK_FARMS);
-  const [products, setProducts] = useState<Product[]>(MOCK_PRODUCTS);
+  const [farms] = useState<Farm[]>(MOCK_FARMS);
+  const [products] = useState<Product[]>(MOCK_PRODUCTS);
   
   const [view, setView] = useState<View>({ name: 'home' });
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -52,9 +53,6 @@ const App: React.FC = () => {
 
     return () => subscription.unsubscribe();
   }, []);
-  
-  // Note: Database content fetching removed to prioritize high-quality local data 
-  // and prevent crashes due to schema mismatches in the connected database.
   
   useEffect(() => {
     if (toast) {
@@ -135,7 +133,11 @@ const App: React.FC = () => {
   const renderView = () => {
     switch (view.name) {
       case 'home':
-        return <HomePage setView={setView} farms={farms} products={products} />;
+        return <HomePage 
+          setView={setView} 
+          farms={farms} 
+          products={products} 
+        />;
       case 'browse':
         return <BrowsePage setView={setView} products={products} addToCart={addToCart} />;
       case 'farms':
@@ -144,20 +146,35 @@ const App: React.FC = () => {
         const farm = farms.find(f => f.id === view.payload);
         if (farm) {
             const farmProducts = products.filter(p => p.farmId === farm.id);
-            return <FarmPage farm={farm} products={farmProducts} setView={setView} />;
+            return <FarmPage 
+              farm={farm} 
+              products={farmProducts} 
+              setView={setView} 
+            />;
         }
         return <div>Farm not found</div>;
       case 'product':
         const product = products.find(p => p.id === view.payload);
         if (product) {
             const productFarm = farms.find(f => f.id === product.farmId);
-            return <ProductPage product={product} farm={productFarm} addToCart={addToCart} setView={setView} />;
+            return <ProductPage 
+              product={product} 
+              farm={productFarm} 
+              addToCart={addToCart} 
+              setView={setView} 
+            />;
         }
         return <div>Product not found</div>;
       case 'checkout':
         return <CheckoutPage cartItems={cart} placeOrder={handlePlaceOrder} />;
+      case 'recipe-assistant':
+        return <RecipeAssistantPage products={products} addToCart={addToCart} setView={setView} />;
       default:
-        return <HomePage setView={setView} farms={farms} products={products} />;
+        return <HomePage 
+          setView={setView} 
+          farms={farms} 
+          products={products} 
+        />;
     }
   };
   

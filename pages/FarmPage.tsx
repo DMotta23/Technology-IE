@@ -23,14 +23,16 @@ const ProductCard: React.FC<{ product: Product, onClick: () => void }> = ({ prod
 const FarmPage: React.FC<FarmPageProps> = ({ farm, products, setView }) => {
   return (
     <div>
-      <div className="h-64 md:h-80 relative">
-        <img src={farm.coverImageUrl} alt={`${farm.name} cover`} className="w-full h-full object-cover"/>
+      <div className="h-64 md:h-80 relative group overflow-hidden">
+        <img src={farm.coverImageUrl} alt={`${farm.name} cover`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"/>
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-10">
         <div className="bg-cream p-8 rounded-xl shadow-xl flex flex-col md:flex-row items-center gap-8">
-            <img src={farm.imageUrl} alt={farm.name} className="w-32 h-32 rounded-full border-4 border-white object-cover" />
+            <div className="relative">
+                <img src={farm.imageUrl} alt={farm.name} className="w-32 h-32 rounded-full border-4 border-white object-cover shadow-lg" />
+            </div>
             <div>
                 <h1 className="text-4xl font-extrabold text-forest-green">{farm.name}</h1>
                 <p className="text-lg text-warm-brown font-semibold mt-1">{farm.location}</p>
